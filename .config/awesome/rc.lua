@@ -225,7 +225,7 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end)
 	-- My key binds
-	awful.key({ "Control", "Alt" }, "l", function () awful.util.spawn("xscreensaver-command -activate") end)
+	awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -activate") end)
 )
 
 clientkeys = awful.util.table.join(
