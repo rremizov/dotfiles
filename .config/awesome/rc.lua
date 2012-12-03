@@ -224,11 +224,12 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end)
-	-- My key binds
-	awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -activate") end)
 )
 
 clientkeys = awful.util.table.join(
+	-- My key binds
+	awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -activate") end),
+	-- Further not mine binds.
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
