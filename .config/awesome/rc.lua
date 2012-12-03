@@ -46,10 +46,14 @@ layouts =
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {}
+tags = {
+	-- Each tag has its own layout.
+	names  = { 1, 2, 3, 4, 5, 6, 7, 8, 9},
+	layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+	tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
@@ -220,6 +224,8 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end)
+	-- My key binds
+	awful.key({ "Control", "Alt" }, "l", function () awful.util.spawn("xscreensaver-command -activate") end)
 )
 
 clientkeys = awful.util.table.join(
