@@ -48,12 +48,14 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
 	-- Each tag has its own layout.
-	names  = { 1, 2, 3, 4, 5, 6, 7, 8, 9},
+	names  = { "α", "β", "γ", "δ", "ε", "ζ", "η", "λ", "ξ"},
 	layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
 	tags[s] = awful.tag(tags.names, s, tags.layout)
+	-- Each tag has icon.
+	--awful.tag.seticon(beautiful.fbreadericon, tags[s][9])
 end
 -- }}}
 

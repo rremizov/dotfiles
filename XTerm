@@ -6,3 +6,4 @@ XTerm*cursorColor: darkgreen
 XTerm*background: black
 XTerm*saveLines: 1000
 XTerm*font: -misc-fixed-medium-r-normal-*-18-*-*-*-*-90-iso10646-*
+xterm*eightBitInput: false

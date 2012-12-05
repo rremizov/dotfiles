@@ -71,6 +71,10 @@ theme.menu_width  = "100"
 -- }}}
 
 -- {{{ Icons
+-- MyIcons
+theme.fbreadericon = theme.confdir .. "/theme/myicons/fbreader.png"
+-- EndMyIcons
+
 -- {{{ Taglist
 theme.taglist_squares_sel   = theme.confdir .. "/theme/taglist/squarefz.png"
 theme.taglist_squares_unsel = theme.confdir .. "/theme/taglist/squarez.png"
