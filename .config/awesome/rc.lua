@@ -19,6 +19,10 @@ terminal = "xterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
+-- MyGlobals
+licqTagN = 9
+-- EndMyGlobals
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -51,11 +55,14 @@ tags = {
 	names  = { "α", "β", "γ", "δ", "ε", "ζ", "η", "λ", "ξ"},
 	layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
 }
+
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
 	tags[s] = awful.tag(tags.names, s, tags.layout)
-	-- Each tag has icon.
+	-- Some tags has icon.
 	--awful.tag.seticon(beautiful.fbreadericon, tags[s][9])
+	awful.tag.setncol(2, tags[s][licqTagN])
+	awful.tag.setproperty(tags[s][licqTagN], "mwfact", 0.20)
 end
 -- }}}
 
@@ -305,6 +312,8 @@ awful.rules.rules = {
                      keys = clientkeys,
 					 size_hints_honor = false,
                      buttons = clientbuttons } },
+	{ rule = { class = "Licq", role = "MainWindow"},
+      properties = { tag = tags[1][licqTagN] } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
