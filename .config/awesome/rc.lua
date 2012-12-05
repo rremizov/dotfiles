@@ -6,6 +6,8 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+-- Calendar2 widget
+require("calendar2")
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -88,6 +90,8 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
+-- Create calendar widget
+calendar2.addCalendarToWidget(mytextclock, "<span color='green'>%s</span>")
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
