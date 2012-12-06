@@ -8,7 +8,8 @@ require("beautiful")
 require("naughty")
 -- Calendar2 widget
 require("calendar2")
-
+-- Vicious library
+vicious = require("vicious")
 -- Load Debian menu entries
 require("debian.menu")
 
@@ -87,6 +88,51 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
 -- }}}
 
+-- {{{ Vicious widgets
+-- {{{ Separator widget
+sepwidget = widget({ type = "textbox" })
+sepwidget.text = " : "
+-- }}}
+
+-- {{{ Memory widget
+-- Initialize widget
+memwidget = widget({ type = "textbox" })
+-- Register widget
+vicious.register(memwidget, vicious.widgets.mem, "$1%", 13)
+-- }}}
+
+-- {{{ Battery widget
+-- Initialize widget
+batwidget = awful.widget.progressbar()
+batwidget:set_width(15)
+batwidget:set_height(20)
+batwidget:set_vertical(true)
+batwidget:set_background_color("#494B4F")
+batwidget:set_border_color(nil)
+batwidget:set_color("#AECF96")
+batwidget:set_gradient_colors({ "#FF0000", "#FFFF00", "#00FF00" })
+-- Register widget
+vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT0")
+-- }}}
+
+-- {{{ Disk widget
+diskwidget = widget({ type = 'textbox' })
+diskwidget.text = "df"
+disk = require("diskusage")
+-- the first argument is the widget to trigger the diskusage
+-- the second/third is the percentage at which a line gets orange/red
+-- true = show only local filesystems
+disk.addToWidget(diskwidget, 75, 90, true)
+-- }}}
+
+-- {{{ CPU widget
+-- Initialize widget
+cpuwidget = widget({ type = "textbox" })
+-- Register widget
+vicious.register(cpuwidget, vicious.widgets.cpu, "$1%")
+-- }}}
+-- }}}
+
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
@@ -160,13 +206,21 @@ for s = 1, screen.count() do
     mywibox[s].widgets = {
         {
             mylauncher,
+			batwidget,
             mytaglist[s],
+			sepwidget,
+			diskwidget,
+			sepwidget,
+			cpuwidget,
+			sepwidget,
+			memwidget,
+			sepwidget,
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
         mytextclock,
-        s == 1 and mysystray or nil,
+		s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
