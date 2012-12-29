@@ -1,0 +1,22 @@
+! YEAHCONSOLE RESOURCES, BEGIN
+
+! Which terminal to use
+yeahconsole*term: xterm
+
+! Height
+yeahconsole*consoleHeight: 20
+
+! Hotkey to toggle yeah console
+! yeahconsole*toggleKey: None+F1
+
+! Autorestart on exit
+! yeahconsole*restart: 1
+
+! Hotkey to toggle fullscreen
+! yeahconsole*keyFull: None+F11
+
+! Hotkeys to change size (+ and - on numpad)
+! yeahconsole*keySmaller: Control+KP_Subtract
+! yeahconsole*keyBigger: Control+KP_Add
+
+! YEAHCONSOLE RESOURCES, END 
