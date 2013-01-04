@@ -23,7 +23,7 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- MyGlobals
-licqTagN = 9
+imTagN = 9
 -- EndMyGlobals
 
 -- Default modkey.
@@ -64,8 +64,8 @@ for s = 1, screen.count() do
 	tags[s] = awful.tag(tags.names, s, tags.layout)
 	-- Some tags has icon.
 	--awful.tag.seticon(beautiful.fbreadericon, tags[s][9])
-	awful.tag.setncol(2, tags[s][licqTagN])
-	awful.tag.setproperty(tags[s][licqTagN], "mwfact", 0.20)
+	awful.tag.setncol(2, tags[s][imTagN])
+	awful.tag.setproperty(tags[s][imTagN], "mwfact", 0.20)
 end
 -- }}}
 
@@ -370,8 +370,8 @@ awful.rules.rules = {
                      keys = clientkeys,
 					 size_hints_honor = false,
                      buttons = clientbuttons } },
-	{ rule = { class = "Licq", role = "MainWindow"},
-      properties = { tag = tags[1][licqTagN] } },
+	{ rule = { class = "Pidgin", role = "buddy_list"},
+      properties = { tag = tags[1][imTagN] } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
