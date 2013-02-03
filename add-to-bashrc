@@ -1,0 +1,4 @@
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:~/bin
+export EDITOR=vim
+# solarize dircolors
+eval `dircolors $HOME/.dircolors.ansi`
