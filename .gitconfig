@@ -1,9 +1,11 @@
 [user]
-	name = username
-	email = username@host
+	name = ceaseandrepent
+	email = ceaseandrepent@gmail.com
 [core]
 	autocrlf = input
 	safecrlf = true
+[diff]
+	tool = diffuse
 [alias]
 	co = checkout
 	ci = commit
