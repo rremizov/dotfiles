@@ -3,6 +3,7 @@ Set of my dotfiles.
 
 -	__.Xdefaults__ - resources for `yeahconsole`.
 -	__.config/awesome__ - config for `awesome` wm.
+-	__.config/ranger__ - config for `ranger` fm.
 -	__.fonts__ - `Anonymous Pro` fonts.
 -	__.xinitrc__ - X Server startup script.
 -	__XTerm__ - resource file for `xterm`.
