@@ -20,3 +20,11 @@ yeahconsole*consoleHeight: 20
 ! yeahconsole*keyBigger: Control+KP_Add
 
 ! YEAHCONSOLE RESOURCES, END 
+
+! XFT RESOURCES, BEGIN
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+! XFT RESOURCES, END
