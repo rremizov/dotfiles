@@ -10,3 +10,4 @@ ln -s `pwd`/init-cache.sh                ~/.init-cache.sh
 ln -s `pwd`/mutt-colors-solarized        ~/.mutt-colors-solarized
 ln -s `pwd`/profile                      ~/.profile
 ln -s `pwd`/xinitrc                      ~/.xinitrc
+ln -s `pwd`/xinitrc                      ~/.xsession
