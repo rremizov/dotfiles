@@ -9,6 +9,7 @@ Set of my dotfiles.
 -	__XTerm__ - resource file for `xterm`.
 -	__Xdefaults__ - resources for `yeahconsole`.
 -	__config/awesome__ - config for `awesome` wm.
+-	__config/luakit__ - config for `luakit` web browser.
 -	__config/ranger__ - config for `ranger` fm.
 -	__dircolors.ansi-__ - dircolors database.
 -	__fonts__ - `Anonymous Pro` fonts.
