@@ -1,6 +1,6 @@
 [user]
-	name = ceaseandrepent
-	email = ceaseandrepent@gmail.com
+	name = username
+	email = username@domain
 [core]
 	autocrlf = input
 	safecrlf = true
