@@ -3,6 +3,7 @@ C www.cplusplus.com
 D luakit://downloads
 G https://github.com
 H luakit://history
+L http://www.lispworks.com/documentation/HyperSpec/Front/index.htm
 R 10.0.0.4:9091
 T rutracker.org
 V 10.0.0.4:8080
