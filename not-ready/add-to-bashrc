@@ -6,6 +6,3 @@ alias mutt='TERM=xterm-256color mutt'
 # solarize dircolors
 eval `dircolors $HOME/.dircolors.ansi`
 
-# syntax highlight for less (source-highlight package required)
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=' -R -N'
