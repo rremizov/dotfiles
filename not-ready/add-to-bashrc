@@ -6,3 +6,5 @@ alias mutt='TERM=xterm-256color mutt'
 # solarize dircolors
 eval `dircolors $HOME/.dircolors.ansi`
 
+# Python modules 
+export PYTHONPATH=~/python/modules
