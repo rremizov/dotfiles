@@ -10,3 +10,5 @@ Configuration for luakit web browser.
 -	Default homepage changed to www.google.ru.
 -	Default search engine changed to google.
 -	Downloads directory changed to `~/Downloads`.
+-	Loads adblock module.
+
