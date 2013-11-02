@@ -8,6 +8,7 @@ XTerm*saveLines: 1000
 ! Font:
 XTerm*faceName: anonymouspro
 XTerm*faceSize: 16
+XTerm*allowBoldFonts: false
 
 ! Enable alt+f, alt+b, ... keys:
 XTerm*eightBitInput: false
