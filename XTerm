@@ -13,6 +13,9 @@ XTerm*allowBoldFonts: false
 ! Enable alt+f, alt+b, ... keys:
 XTerm*eightBitInput: false
 
+! 256 colors
+XTerm*termName: xterm-256color
+
 ! ----------------------------------------------
 ! Solarized color scheme for the X Window System
 !
