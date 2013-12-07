@@ -4,6 +4,7 @@ Set of my dotfiles.
 -	__not-ready__ - folder, contains confs, not ready for usage (e.g. if one needs password).
 	-	__add-to-bashrc__ - something that needs to be added to `.bashrc`.
 	-	__muttrc-gmail-imap.txt__ for mutt, gmail via imap.
+	-	__muttrc-yandex-imap.txt__ for mutt, yandex via imap.
 	-	__vsftpd.conf__ for vsftpd ftp server, place in `/etc`.
 
 -	__XTerm__ - resource file for `xterm`.
