@@ -1,0 +1,3 @@
+bind branch > !git push origin %(branch)
+bind generic < !git pull
+

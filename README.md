@@ -19,5 +19,7 @@ Set of my dotfiles.
 -	__local/share/luakit__ - userscripts for `luakit`.
 -	__mutt-colors-solarized__ - folder with solarized colorscheme for `mutt`.
 -	__profile__ - for login shell.
+-	__tigrc__ config for `tig` git text-ui interface.
 -	__vimrc__ moved to `dotvim` repo.
 -	__xinitrc__ - X Server startup script.
+
