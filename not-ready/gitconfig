@@ -1,11 +1,14 @@
 [user]
 	name = username
 	email = username@domain
+
 [core]
 	autocrlf = input
 	safecrlf = true
+
 [diff]
 	tool = diffuse
+
 [alias]
 	co = checkout
 	ci = commit
@@ -14,4 +17,7 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --all
 	type = cat-file -t
 	dump = cat-file -p
+
+[push]
+	default = current
 
