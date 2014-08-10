@@ -11,6 +11,7 @@ ln -s `pwd`/local                        ~/.local
 ln -s `pwd`/mutt-colors-solarized        ~/.mutt-colors-solarized
 ln -s `pwd`/profile                      ~/.profile
 ln -s `pwd`/tigrc                        ~/.tigrc
+ln -s `pwd`/tmux.conf                    ~/.tmux.conf
 ln -s `pwd`/xinitrc                      ~/.xinitrc
 ln -s `pwd`/xinitrc                      ~/.xsession
 
