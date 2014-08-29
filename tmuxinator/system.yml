@@ -1,0 +1,7 @@
+project_name: system
+project_root: ~/
+windows:
+  - ranger: ranger
+  - shell: ls -alh
+  - updates: sudo aptitude update && sudo aptitude safe-upgrade
+

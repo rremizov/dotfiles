@@ -14,4 +14,5 @@ ln -s `pwd`/tigrc                        ~/.tigrc
 ln -s `pwd`/tmux.conf                    ~/.tmux.conf
 ln -s `pwd`/xinitrc                      ~/.xinitrc
 ln -s `pwd`/xinitrc                      ~/.xsession
+ln -s `pwd`/tmuxinator/system.yml        ~/.tmuxinator/system.yml
 
