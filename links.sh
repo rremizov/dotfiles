@@ -16,5 +16,4 @@ ln -s `pwd`/tmux.conf                    ~/.tmux.conf
 ln -s `pwd`/tmuxinator/system.yml        ~/.tmuxinator/system.yml
 ln -s `pwd`/xinitrc                      ~/.xinitrc
 ln -s `pwd`/xinitrc                      ~/.xsession
-ln -s `pwd`/xmodmap                      ~/.xmodmap
 
