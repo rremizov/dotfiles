@@ -1,0 +1,19 @@
+# E-mail address to where you want a BCC sent to:
+unseen deliver audit@youremail.com
+
+# E-mail address to where you want failed messages sent to:
+errors_to audit@youremail.com
+
+# Add the file to the config:
+# vim /etc/exim4/exim4.conf.template
+# Search for LOCAL_DELIVERY=mail_spool
+# Has this:
+# LOCAL_DELIVERY=mail_spool
+# .endif
+#
+# After the .endif paste this in:
+# system_filter = /etc/exim4/system_filter.exim
+#
+# update-exim4.conf
+# systemctl restart exim4
+
