@@ -11,6 +11,7 @@ ln -s `pwd`/init-cache.sh                ~/.init-cache.sh
 ln -s `pwd`/local                        ~/.local
 ln -s `pwd`/mutt-colors-solarized        ~/.mutt-colors-solarized
 ln -s `pwd`/profile                      ~/.profile
+ln -s `pwd`/psqlrc                       ~/.psqlrc
 ln -s `pwd`/tigrc                        ~/.tigrc
 ln -s `pwd`/tmux.conf                    ~/.tmux.conf
 ln -s `pwd`/tmuxinator/system.yml        ~/.tmuxinator/system.yml
