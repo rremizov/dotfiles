@@ -8,3 +8,7 @@ eval `dircolors $HOME/.dircolors.ansi`
 
 # Python modules 
 export PYTHONPATH=~/python/modules
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
