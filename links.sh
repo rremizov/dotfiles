@@ -7,6 +7,7 @@ ln -s `pwd`/config                       ~/.config
 ln -s `pwd`/dircolors.ansi-universal     ~/.dircolors.ansi
 ln -s `pwd`/fonts                        ~/.fonts
 ln -s `pwd`/gpg.conf                     ~/.gnupg/gpg.conf
+ln -s `pwd`/gpg-agent.conf               ~/.gnupg/gpg-agent.conf
 ln -s `pwd`/init-cache.sh                ~/.init-cache.sh
 ln -s `pwd`/local                        ~/.local
 ln -s `pwd`/mutt-colors-solarized        ~/.mutt-colors-solarized
