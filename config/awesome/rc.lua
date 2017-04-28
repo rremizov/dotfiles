@@ -268,9 +268,6 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-	-- My key binds
-	awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -activate") end),
-	-- Further not mine binds.
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
@@ -305,11 +302,18 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
-	awful.key({ modkey, "Shift"   }, "t",
-		function (c)
-			if c.titlebar then awful.titlebar.remove(c)
-			else awful.titlebar.add(c, { modkey = modkey }) end
-		end),
+    awful.key({ modkey, "Control" }, "n",      function ()
+        local tag = awful.tag.selected()
+        for i=1, #tag:clients() do
+            tag:clients()[i].minimized=false
+            tag:clients()[i]:redraw()
+        end
+    end),
+    awful.key({ modkey, "Shift"   }, "t",
+        function (c)
+            if c.titlebar then awful.titlebar.remove(c)
+            else awful.titlebar.add(c, { modkey = modkey }) end
+        end),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
