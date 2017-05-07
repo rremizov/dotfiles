@@ -290,7 +290,10 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+    awful.key({ modkey },            "p",     function () 
+        awful.util.spawn("dmenu_run -b -fn '-*-fixed-*-*-*-*-16-*-*-*-*-*-*-*'")
+    end)
 )
 
 clientkeys = awful.util.table.join(
