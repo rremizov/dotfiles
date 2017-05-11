@@ -293,6 +293,15 @@ globalkeys = awful.util.table.join(
               end),
     awful.key({ modkey },            "p",     function () 
         awful.util.spawn("dmenu_run -b -fn '-*-fixed-*-*-*-*-16-*-*-*-*-*-*-*'")
+    end),
+
+	-- Restore all clients
+    awful.key({ modkey, "Control" }, "n",      function ()
+        local tag = awful.tag.selected()
+        for i=1, #tag:clients() do
+            tag:clients()[i].minimized=false
+            tag:clients()[i]:redraw()
+        end
     end)
 )
 
@@ -305,13 +314,6 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
-    awful.key({ modkey, "Control" }, "n",      function ()
-        local tag = awful.tag.selected()
-        for i=1, #tag:clients() do
-            tag:clients()[i].minimized=false
-            tag:clients()[i]:redraw()
-        end
-    end),
     awful.key({ modkey, "Shift"   }, "t",
         function (c)
             if c.titlebar then awful.titlebar.remove(c)
