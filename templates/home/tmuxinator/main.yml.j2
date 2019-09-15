@@ -1,0 +1,6 @@
+project_name: system
+project_root: ~/
+windows:
+{% for window in tmuxinator_main_windows %}
+  - {{ window.name }}: {{ window.command }}
+{% endfor %}

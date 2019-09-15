@@ -1,3 +1,0 @@
-bind branch > !git push -u origin %(branch)
-bind generic < !git pull
-

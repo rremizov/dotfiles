@@ -1,0 +1,25 @@
+[user]
+	name = {{ git_username }}
+	email = {{ git_email }}
+	signingKey = {{ git_signing_key }}
+
+[core]
+	autocrlf = input
+	safecrlf = true
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	as = commit --amend --no-edit --gpg-sign
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --all
+	type = cat-file -t
+	dump = cat-file -p
+
+[push]
+	default = current
+
+[commit]
+	gpgsign = true
+

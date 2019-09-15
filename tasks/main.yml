@@ -1,0 +1,83 @@
+---
+#- name: Install packages
+#  apt:
+#    name: "{{ packages }}"
+#    update_cache: true
+#  vars:
+#    packages:
+#      - vim
+#      - htop
+#      - apt-transport-https
+
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/.gnupg
+    - ~/.tmuxinator
+    - ~/.config
+    - ~/.fonts
+
+- name: Install system configuration files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - {
+        src: xorg.conf.d/10-keyboard.conf,
+        dest: /etc/X11/xorg.conf.d/10-keyboard.conf,
+      }
+    - {
+        src: xorg.conf.d/50-trackball.conf,
+        dest: /etc/X11/xorg.conf.d/50-trackball.conf,
+      }
+    - { src: systemd/logind.conf, dest: /etc/systemd/logind.conf }
+    - { src: udev/rules.d/70-u2f.rules, dest: /etc/udev/rules.d/70-u2f.rules }
+  loop_control:
+    label: "{{ item.dest }}"
+
+- name: Copy files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: home/fonts/, dest: ~/.fonts/ }
+    - { src: home/awesome/, dest: ~/.config/awesome/ }
+    - { src: home/ranger/, dest: ~/.config/ranger/ }
+  loop_control:
+    label: "{{ item.dest }}"
+
+- name: Install configuration files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: home/XTerm, dest: ~/XTerm }
+    - { src: home/Xdefaults, dest: ~/.Xdefaults }
+    - { src: home/gpg.conf, dest: ~/.gnupg/gpg.conf }
+    - { src: home/gpg-agent.conf, dest: ~/.gnupg/gpg-agent.conf }
+    - { src: home/profile, dest: ~/.profile }
+    - { src: home/psqlrc, dest: ~/.psqlrc }
+    - { src: home/tigrc, dest: ~/.tigrc }
+    - { src: home/tmux.conf, dest: ~/.tmux.conf }
+    - { src: home/xinitrc, dest: ~/.xinitrc }
+    - { src: home/xinitrc, dest: ~/.xsession }
+    - { src: home/gitconfig, dest: ~/.gitconfig }
+    - { src: home/redshift.conf, dest: ~/.config/redshift.conf }
+    - { src: home/bashrc_core.sh, dest: ~/.bashrc_core.sh }
+    - { src: home/bashrc_ps1.sh, dest: ~/.bashrc_ps1.sh }
+    - { src: home/bashrc_pyenv.sh, dest: ~/.bashrc_pyenv.sh }
+    - { src: home/tmuxinator/main.yml.j2, dest: ~/.tmuxinator/main.yml }
+  loop_control:
+    label: "{{ item.dest }}"
+
+- name: Source .bashrc snippets
+  lineinfile:
+    path: ~/.bashrc
+    line: "{{ item }}"
+    state: present
+  with_items:
+    - source ~/.bashrc_core.sh
+    - source ~/.bashrc_ps1.sh
+    - source ~/.bashrc_pyenv.sh

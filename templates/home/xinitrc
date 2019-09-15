@@ -1,0 +1,12 @@
+#!/bin/bash
+
+xset mouse 3/2 0
+xrdb -merge ~/.Xdefaults
+xrdb -merge ~/XTerm
+yeahconsole &
+xscreensaver -no-splash &
+eval "$(gpg-agent --daemon)"
+
+[ -f ~/.xinitrc-local ] && . ~/.xinitrc-local
+
+exec awesome
