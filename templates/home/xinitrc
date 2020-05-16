@@ -7,6 +7,10 @@ yeahconsole &
 xscreensaver -no-splash &
 eval "$(gpg-agent --daemon)"
 
+{% for command in xinitrc_commands|default([]) %}
+{{ command }}
+{% else %}
 [ -f ~/.xinitrc-local ] && . ~/.xinitrc-local
+{% endfor %}
 
 exec awesome
