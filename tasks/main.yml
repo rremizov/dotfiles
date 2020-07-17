@@ -83,3 +83,6 @@
     - source ~/.bashrc_core.sh
     - source ~/.bashrc_ps1.sh
     - source ~/.bashrc_pyenv.sh
+
+- name: Include gitwatch tasks
+  include_tasks: gitwatch.yml

@@ -1,0 +1,21 @@
+---
+- name: Install system dependencies
+  apt:
+    name: "{{ packages }}"
+    update_cache: true
+  vars:
+    packages:
+      - inotify-tools
+  become: true
+  become_method: sudo
+
+- name: Download and install gitwatch script
+  get_url:
+    url: https://raw.githubusercontent.com/gitwatch/gitwatch/2fdf9945136ae92cb193d54cf2f3b3ff2acbe952/gitwatch.sh
+    dest: /usr/local/bin/gitwatch
+    owner: root
+    group: root
+    mode: "0755"
+    checksum: "sha256:752d4d7b0fa28d416078890d1c9548bbcf22bbe3a73825af8b420d6d81ce7721"
+  become: true
+  become_method: sudo
