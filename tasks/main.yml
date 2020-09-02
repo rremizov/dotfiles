@@ -24,6 +24,7 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
+    - { src: default/keyboard, dest: /etc/default/keyboard }
     - {
         src: xorg.conf.d/10-keyboard.conf,
         dest: /etc/X11/xorg.conf.d/10-keyboard.conf,
